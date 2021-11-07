@@ -1,0 +1,75 @@
+<!-- Boxicons CDN Link -->
+<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+
+<div class="sidebar active">
+    <div class="logo_content">
+        <div class="logo">
+            <h2 class="logo_name" style="font-weight:600;"><span style="color: #70A0FF;">S</span><span style="color: #B5D2A7;">ystem</span><span style="color: #70A0FF;">M</span><span style="color: #B5D2A7;">edic</span></h2>
+        </div>
+        <i class='bx bx-menu-alt-right' id="btn"></i>
+    </div>
+    <ul class="nav_list">
+        <li>
+            <a (click)="goToControleMedicamentos()">
+                <i class='bx bx-grid-alt'></i>
+                <span class="links_name">Controle de medicamentos</span>
+            </a>
+            <span class="tooltip">Controle de medicamentos</span>
+        </li>
+        <li>
+            <a (click)="goToControlePacientes()">
+                <i class='bx bx-user'></i>
+                <span class="links_name">Controle de pacientes</span>
+            </a>
+            <span class="tooltip">Controle de pacientes</span>
+        </li>
+        <li>
+            <a (click)="goToControleDeRetirada()">
+                <i class='bx bx-chat'></i>
+                <span class="links_name">Controle de retirada</span>
+            </a>
+            <span class="tooltip">Controle de retirada</span>
+        </li>
+        <li style="margin: 0px; padding: 0px; height: 5px;">
+            <hr style="color: #70A0FF;">
+        </li>
+        <li>
+            <a (click)="goToRelatorioDeRetirada()">
+                <i class='bx bx-pie-chart-alt-2'></i>
+                <span class="links_name">Relátorio de Retirada</span>
+            </a>
+            <span class="tooltip">Relátorio de Retirada</span>
+        </li>
+        <li>
+            <a (click)="goToRelatorioDeReposicao()">
+                <i class='bx bx-folder'></i>
+                <span class="links_name">Relátorio de Reposição</span>
+            </a>
+            <span class="tooltip">Relátorio de Reposição</span>
+        </li>
+        <li>
+            <a (click)="goToRelatorioDeMedicamentosControlados()">
+                <i class='bx bx-cart-alt'></i>
+                <span class="links_name">Relátorio de Medicamentos Controlados</span>
+            </a>
+            <span class="tooltip">Relátorio de Medicamentos Controlados</span>
+        </li>
+        <li style="margin: 0px; padding: 0px; height: 5px;">
+            <hr style="color: #70A0FF;">
+        </li>
+        <!-- Só aparece para usuarios do tipo admin -->
+        <li *ngIf=" typeUser === 'admin' ">
+            <a (click)="goToControleDeUsuario()">
+                <i class="uil uil-users-alt"></i>
+                <span class="links_name">Controle de Usuário</span>
+            </a>
+            <span class="tooltip">Controle de Usuário</span>
+        </li>
+    </ul>
+    <div class="profile_content" (click)="logout()"> 
+        <div class="profile">  
+            <span class="logout">Sair</span>    
+            <i class='bx bx-log-out' id="log_out"></i>
+        </div>
+    </div>
+</div>

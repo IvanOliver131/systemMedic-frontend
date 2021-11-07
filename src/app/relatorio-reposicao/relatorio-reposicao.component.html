@@ -1,0 +1,52 @@
+<app-sidebar></app-sidebar>
+<div>
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Relatório de Reposição de Medicamentos</h5>
+      <label class="text-input">Este são todos os medicamentos que devem ser repostos com a quantidade em estoque <= 15 </label>   
+    </div>
+  </div>
+
+  <hr style="color: rgb(161, 161, 161);">
+
+  <div class="d-flex justify-content-center px-5">
+    <div class="search"> <input type="text" class="search-input"  placeholder="Procurar..." name="" [(ngModel)]="search"  (keyup)="funcaoCadaTecla(search)" (keyup.enter)="funcaoEnter(search)"> 
+      <a class="search-icon" (click)="funcaoEnter(search)"> 
+        <i class="fa fa-search"></i> 
+      </a> 
+    </div>
+  </div>
+
+  <div class="container scroll">
+    <table class="table table-responsive" >
+        <thead style="background-color: #70A0FF;">
+            <tr>
+                <th scope="col" class="title-table">ID</th>
+                <th scope="col" class="title-table">Medicamento</th>
+                <th scope="col" class="title-table">Tipo</th>
+                <th scope="col" class="title-table">Estoque</th>
+                <th scope="col" class="title-table">Fornecedor</th>
+                <th scope="col" class="title-table">Nota Fiscal</th>
+                <th scope="col" class="title-table">Valor</th>
+                <th scope="col" class="title-table">Descrição</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let qtd of allMedicineLst, let i = index">
+                <th scope="row" class="text-table">{{qtd.id}}</th>
+                <td class="text-table">{{qtd.name}}</td>
+                <td class="text-table">{{qtd.type? 'Controlado' : 'Nao Controlado'}}</td>
+                <td class="text-table">{{qtd.estoque}}</td>
+                <td class="text-table">{{qtd.fornecedor}}</td>
+                <td class="text-table">{{qtd.nota_fiscal}}</td>
+                <td class="text-table">R{{qtd.valor | currency}}</td>
+                <td class="text-table">{{qtd.descricao}}</td>
+            </tr>
+        </tbody>
+    </table>
+  </div> 
+  <div class="container" style="text-align: end;">
+    <button type="button" class="btn btn-primary" (click)="downloadCsv(allMedicineLst,'Relatorio Reposicao')">Baixar Relatório</button>   
+  </div> 
+</div>

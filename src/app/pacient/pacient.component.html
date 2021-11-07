@@ -1,0 +1,63 @@
+<app-sidebar></app-sidebar>
+<div>
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Controle de Pacientes</h5>
+
+      <label class="text-input">Nome do Paciente</label>
+      <input type="text" class="form-control" placeholder="Informe o nome do paciente" name="name" [(ngModel)]="pacient.name">
+
+      <label class="text-input">Idade</label>
+      <input type="text" class="form-control" [specialCharacters]="[ '[' ,']' , '\\' ]" mask="000" placeholder="Informe a idade do paciente" name="age" [(ngModel)]="pacient.age"> 
+      
+      <label class="text-input">Bairro</label>
+      <input type="text" class="form-control" placeholder="Informe o bairro do paciente"  name="bairro" [(ngModel)]="pacient.bairro">
+
+      <label class="text-input">CPF</label>
+      <input type="text" class="form-control" mask="000.000.000-00" placeholder="Informe o CPF do paciente" name="cpf" [(ngModel)]="pacient.cpf">
+
+      <label class="text-input">Cartão SUS ou RG</label>
+      <input type="text" class="form-control" placeholder="Informe o cartao do SUS ou RG do paciente" name="cartaoSUS_RG" [(ngModel)]="pacient.cartaoSUS_RG">
+
+      <div style="text-align: end;">
+        <button type="button" class="btn btn-danger" (click)="deletePacient(pacient)">Deletar</button>
+        <button type="button" class="btn btn-primary" (click)="updatePacient()">Alterar</button>
+        <button type="button" class="btn btn-success" (click)="addPacient()">Cadastrar</button>   
+      </div>     
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center px-5">
+    <div class="search"> <input type="text" class="search-input"  placeholder="Procurar..." name="" [(ngModel)]="search"  (keyup)="funcaoCadaTecla(search)" (keyup.enter)="funcaoEnter(search)"> 
+      <a class="search-icon" (click)="funcaoEnter(search)"> 
+        <i class="fa fa-search"></i> 
+      </a> 
+    </div>
+  </div>
+
+  <div class="container scroll">
+    <table class="table table-responsive">
+        <thead style="background-color: #70A0FF;">
+            <tr>
+                <th scope="col" class="title-table">ID</th>
+                <th scope="col" class="title-table">Paciente</th>
+                <th scope="col" class="title-table">Idade</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let qtd of allPacientLst, let i = index">
+                <th scope="row" class="text-table">{{qtd.id}}</th>
+                <td class="text-table">{{qtd.name}}</td>
+                <td class="text-table">{{qtd.age}}</td>
+                <span type="text" class="btn button-delete" style="margin-left: 20px; margin-top: 3px; border: none; background-color:#d9534f; color: white;"
+                    (click)="deletePacient(allPacientLst[i])"><i class="uil uil-trash-alt"></i></span>
+                    
+                <span type="text" class="btn button-update" style="margin-left: 5px; margin-top: 3px; border: none; background-color: #0275d8; color: white;"
+                    (click)="setPacient(allPacientLst[i])"><i class="uil uil-edit"></i></span>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+

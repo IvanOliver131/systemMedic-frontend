@@ -1,0 +1,64 @@
+<app-sidebar></app-sidebar>
+<div>
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Controle de Usuário</h5>
+
+      <label class="text-input">Nome do Usuário</label>
+      <input type="text" class="form-control" placeholder="Informe o nome do usuario" name="username" [(ngModel)]="user.username">
+
+      <label class="text-input">E-mail do usuário</label>
+      <input type="email" class="form-control" placeholder="Informe o email do usuario" name="email" [(ngModel)]="user.email"> 
+      
+      <label class="text-input">Password do usuário</label>
+      <input type="password" class="form-control" placeholder="Informe a senha do usuario"  name="password" [(ngModel)]="user.password">
+
+      <label class="text-input">Tipo do usuário</label>
+      <select class="form-select form-control" aria-label="Default select example" [(ngModel)]="user.type">
+        <option value="admin" selected>Administrador</option>
+        <option value="user">Usuário</option>
+      </select>
+
+      <div style="text-align: end;">
+        <button type="button" class="btn btn-danger" (click)="deleteUser(user)">Deletar</button>
+        <button type="button" class="btn btn-primary" (click)="updateUser()">Alterar</button>
+        <button type="button" class="btn btn-success" (click)="addUser()">Cadastrar</button>   
+      </div>  
+    </div>  
+  </div>
+
+  <div class="d-flex justify-content-center px-5">
+    <div class="search"> <input type="text" class="search-input"  placeholder="Procurar..." name="" [(ngModel)]="search"  (keyup)="funcaoCadaTecla(search)" (keyup.enter)="funcaoEnter(search)"> 
+      <a class="search-icon" (click)="funcaoEnter(search)"> 
+        <i class="fa fa-search"></i> 
+      </a> 
+    </div>
+  </div>
+
+  <div class="container scroll">
+    <table class="table table-responsive" >
+        <thead style="background-color: #70A0FF;">
+            <tr>
+                <th scope="col" class="title-table">ID</th>
+                <th scope="col" class="title-table">Username</th>
+                <th scope="col" class="title-table">Tipo</th>
+                <th scope="col" class="title-table">Email</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let qtd of allUserLst, let i = index">
+                <th scope="row" class="text-table">{{qtd.id}}</th>
+                <td class="text-table">{{qtd.username}}</td>
+                <td class="text-table">{{qtd.type}}</td>
+                <td class="text-table">{{qtd.email}}</td>
+                <span type="text" class="btn button-delete" style="margin-left: 20px; margin-top: 3px; border: none; background-color:#d9534f; color: white;"
+                    (click)="deleteUser(allUserLst[i])"><i class="uil uil-trash-alt"></i></span>
+                    
+                <span type="text" class="btn button-update" style="margin-left: 5px; margin-top: 3px; border: none; background-color: #0275d8; color: white;"
+                    (click)="setUser(allUserLst[i])"><i class="uil uil-edit"></i></span>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>

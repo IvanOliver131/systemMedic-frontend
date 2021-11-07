@@ -1,0 +1,26 @@
+<div>
+    <div>
+        <form action="#" class="sign-in-form">
+            <h2 class="title"><span style="color: #70A0FF;">S</span><span style="color: #B5D2A7;">ystem</span><span style="color: #70A0FF;">M</span><span style="color: #B5D2A7;">edic</span></h2>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Login" [(ngModel)]="authentication.email" name="email" />
+            </div>
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Senha" [(ngModel)]="authentication.password"
+                    name="password" />
+            </div>
+            <!-- <div class="remember">   
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1" style="color: rgb(206, 206, 206);">Lembrar-se de mim</label>
+            </div> -->
+            <input type="submit" value="Entrar" class="btn solid" (click)="authenticate()" />
+            <!-- <div>
+                <span class="forget-password">Esqueceu a senha?</span>
+            </div> -->
+        </form>
+    </div> 
+    <div class="footer"></div>
+</div>
+

@@ -1,0 +1,83 @@
+<app-sidebar></app-sidebar>
+<div>
+  <div class="card" >
+    <div class="card-body">
+      <h5 class="card-title">Controle de Medicamentos</h5>
+
+      <label class="text-input">Nome do Medicamento</label>
+      <input type="text" class="form-control" placeholder="Informe o nome do medicamento" name="name" [(ngModel)]="medicine.name">
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="1" name="type" [(ngModel)]="medicine.type">
+        <label class="form-check-label" for="flexCheckDefault">
+          Controlado
+        </label>
+      </div>
+
+      <label class="text-input">Estoque</label>
+      <input type="text" class="form-control" mask="0000" placeholder="Informe a quantidade de medicamentos em estoque" name="estoque" [(ngModel)]="medicine.estoque"> 
+      
+      <label class="text-input">Fornecedor</label>
+      <input type="text" class="form-control" placeholder="Informe o fornecedor"  name="fornecedor" [(ngModel)]="medicine.fornecedor">
+
+      <label class="text-input">Nota Fiscal</label>
+      <input type="email" class="form-control" placeholder="Informe a nota fiscal do medicamento" name="nota_fiscal" [(ngModel)]="medicine.nota_fiscal">
+
+      <label class="text-input">Valor Unitário</label>
+      <input type="text" class="form-control" placeholder="Informe o valor unitário do medicamento" name="valor" [(ngModel)]="medicine.valor">
+
+      <label class="text-input">Descrição</label>
+      <input type="text" class="form-control" placeholder="Informe a descrição do medicamento" name="descricao" [(ngModel)]="medicine.descricao">
+
+      <div style="text-align: end;">
+        <button type="button" class="btn btn-danger" (click)="deleteMedicine(medicine)">Deletar</button>
+        <button type="button" class="btn btn-primary" (click)="updateMedicine()">Alterar</button>
+        <button type="button" class="btn btn-success" (click)="addMedicine()">Cadastrar</button>   
+      </div>     
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-center px-5">
+    <div class="search"> <input type="text" class="search-input"  placeholder="Procurar..." name="" [(ngModel)]="search"  (keyup)="funcaoCadaTecla(search)" (keyup.enter)="funcaoEnter(search)"> 
+      <a class="search-icon" (click)="funcaoEnter(search)"> 
+        <i class="fa fa-search"></i> 
+      </a> 
+    </div>
+  </div>
+
+  <div class="container scroll">
+    <table class="table table-responsive" >
+        <thead style="background-color: #70A0FF;">
+            <tr>
+                <th scope="col" class="title-table">ID</th>
+                <th scope="col" class="title-table">Medicamento</th>
+                <th scope="col" class="title-table">Tipo</th>
+                <th scope="col" class="title-table">Estoque</th>
+                <th scope="col" class="title-table">Fornecedor</th>
+                <th scope="col" class="title-table">Nota Fiscal</th>
+                <th scope="col" class="title-table">Valor</th>
+                <th scope="col" class="title-table">Descrição</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let qtd of allMedicineLst, let i = index">
+                <th scope="row" class="text-table">{{qtd.id}}</th>
+                <td class="text-table">{{qtd.name}}</td>
+                <td class="text-table">{{qtd.type? 'Controlado' : 'Nao Controlado'}}</td>
+                <td class="text-table">{{qtd.estoque}}</td>
+                <td class="text-table">{{qtd.fornecedor}}</td>
+                <td class="text-table">{{qtd.nota_fiscal}}</td>
+                <td class="text-table">R{{qtd.valor | currency}}</td>
+                <td class="text-table">{{qtd.descricao}}</td>
+                <span type="text" class="btn button-delete" style="margin-left: 20px; margin-top: 3px; border: none; background-color:#d9534f; color: white;"
+                    (click)="deleteMedicine(allMedicineLst[i])"><i class="uil uil-trash-alt"></i></span>
+                    
+                <span type="text" class="btn button-update" style="margin-left: 5px; margin-top: 3px; border: none; background-color: #0275d8; color: white;"
+                    (click)="setMedicine(allMedicineLst[i])"><i class="uil uil-edit"></i></span>
+            </tr>
+        </tbody>
+    </table>
+  </div>
+</div>
+

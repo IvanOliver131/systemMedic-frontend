@@ -1,0 +1,118 @@
+.card{
+  width: 80%; 
+  margin:auto;
+  box-shadow: none;
+  background: #F8F8F8;
+  border: none;
+}
+
+.card-body{
+  padding: 20px;
+  margin-top: 1vh;
+}
+
+.card-title{
+  text-align: center;
+  color: #B5D2A7;
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.text-input{
+  color: #70A0FF;
+  font-weight: 500;
+}
+
+.form-control{
+  margin: 10px;
+}
+
+.form-check{
+  margin: 5px;
+}
+
+.btn{
+  margin-right: 10px;
+}
+
+.container{
+  margin-top: 2vh;
+}
+
+.scroll{ 
+  display: block;
+  height: 65vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth; 
+}
+
+.title-table{
+  color: white;
+  font-weight: 500;
+}
+
+.text-table{
+  color:#70A0FF;
+}
+
+.btn .button-delete:hover{
+  background-color:#d63934;
+}
+
+.btn .button-update:hover{
+  background-color: #0065bd;
+}
+
+/*** SEARCH BAR ***/
+.search {
+  width: 100%;
+  margin-bottom: auto;
+  margin-top: 20px;
+  height: 50px;
+  background-color: #fff;
+  padding: 10px;
+  border: 0.5px solid rgb(199, 199, 199);
+  border-radius: 5px
+}
+
+
+.search-input {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: none;
+  width: 0;
+  margin-top: 5px;
+  caret-color: transparent;
+  line-height: 20px;
+  transition: width 0.4s linear
+}
+
+.search .search-input {
+  padding: 0 10px;
+  width: 100%;
+  caret-color: #536bf6;
+  font-size: 19px;
+  font-weight: 300;
+  color: black;
+  transition: width 0.4s linear
+}
+
+.search-icon {
+  height: 34px;
+  width: 34px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: #536bf6;
+  font-size: 10px;
+  bottom: 30px;
+  position: relative;
+  border-radius: 5px
+}
+
+.search-icon:hover {
+  color: #fff !important
+}
