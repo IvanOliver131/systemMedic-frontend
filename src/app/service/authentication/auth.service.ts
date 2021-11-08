@@ -3,12 +3,15 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Md5 } from 'ts-md5/dist/md5';
 import { catchError, map } from 'rxjs/operators';
 import { BaseService } from '../baseService';
+import { environment } from 'src/environments/environment';
+
+const apiUrl = environment;
 
 @Injectable({
     providedIn: 'root'
 })
 export class AuthService extends BaseService {
-    authURL = `http://localhost:3000/auth`;
+    authURL = `${apiUrl}/auth`;
 
     constructor(private h: HttpClient) {
         super(h);

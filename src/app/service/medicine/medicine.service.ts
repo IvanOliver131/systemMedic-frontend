@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Medicine } from 'src/app/shared/medicine';
 import { Observable, ObservableInput } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
@@ -9,11 +10,14 @@ import * as XLSX from 'xlsx';
 const Excel_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
 const Excel_EXTENSION = '.xlsx';
 
+
+const apiUrl = environment;
+
 @Injectable({
     providedIn: 'root'
 })
 export class MedicineService {
-    medicineURL = `http://localhost:3000/medicine`;
+    medicineURL = `${apiUrl}/medicine`;
 
     constructor(private http: HttpClient) { }
 

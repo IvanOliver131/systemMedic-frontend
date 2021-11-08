@@ -4,11 +4,16 @@ import { Md5 } from 'ts-md5/dist/md5';
 import { User } from 'src/app/shared/user';
 import { Observable } from 'rxjs';
 
+
+import { environment } from 'src/environments/environment';
+
+const apiUrl = environment;
+
 @Injectable({
     providedIn: 'root'
 })
 export class UserService {
-    usersURL = `http://localhost:3000/users`;
+    usersURL = `${apiUrl}/users`;
 
     constructor(private http: HttpClient) { }
 

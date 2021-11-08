@@ -7,11 +7,16 @@ import * as XLSX from 'xlsx';
 const Excel_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
 const Excel_EXTENSION = '.xlsx';
 
+
+import { environment } from 'src/environments/environment';
+
+const apiUrl = environment;
+
 @Injectable({
     providedIn: 'root'
 })
 export class RetiradaService {
-    pacientMedicineURL = `http://localhost:3000/pacientMedicine`;
+    pacientMedicineURL = `${apiUrl}/pacientMedicine`;
 
     constructor(private http: HttpClient) { }
 
