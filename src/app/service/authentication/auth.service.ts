@@ -5,7 +5,7 @@ import { catchError, map } from 'rxjs/operators';
 import { BaseService } from '../baseService';
 import { environment } from 'src/environments/environment';
 
-const apiUrl = environment;
+const { apiUrl } = environment;
 
 @Injectable({
     providedIn: 'root'

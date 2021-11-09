@@ -10,8 +10,7 @@ import * as XLSX from 'xlsx';
 const Excel_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
 const Excel_EXTENSION = '.xlsx';
 
-
-const apiUrl = environment;
+const { apiUrl } = environment;
 
 @Injectable({
     providedIn: 'root'

@@ -10,7 +10,7 @@ const Excel_EXTENSION = '.xlsx';
 
 import { environment } from 'src/environments/environment';
 
-const apiUrl = environment;
+const { apiUrl } = environment;
 
 @Injectable({
     providedIn: 'root'
