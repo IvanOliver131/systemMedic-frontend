@@ -15,7 +15,12 @@
                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                 <label class="form-check-label" for="exampleCheck1" style="color: rgb(206, 206, 206);">Lembrar-se de mim</label>
             </div> -->
-            <input type="submit" value="Entrar" class="btn solid" (click)="authenticate()" />
+
+            <div *ngIf="showSpinner;" class="spinner-login">
+                <i class="fa fa-spinner fa-spin"></i> Processando, aguarde ...
+            </div>
+                
+            <input *ngIf="!showSpinner" type="submit" value="Entrar" class="btn solid" (click)="authenticate()" />
             <!-- <div>
                 <span class="forget-password">Esqueceu a senha?</span>
             </div> -->

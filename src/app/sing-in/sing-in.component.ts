@@ -16,6 +16,7 @@ export class SingInComponent implements OnInit {
   user: User = new User();
   authentication: Authentication = new Authentication();
   el: any;
+  showSpinner = false;
 
   constructor(
     private authSvc: AuthService,
@@ -47,9 +48,11 @@ export class SingInComponent implements OnInit {
   }
 
   authenticate() {
+    this.showSpinner = true;
     if (this.verifyInputs()) {
       this.authSvc.login(this.authentication).subscribe(
         result => {
+          this.showSpinner = false;
           this.router.navigateByUrl('controle-de-medicamentos');
         }
       ),
