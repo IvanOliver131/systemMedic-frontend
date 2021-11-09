@@ -31,7 +31,7 @@ export class AuthService extends BaseService {
         //loginObj.password = password;
 
         const obj = {
-            email: loginObj.email,
+            email: loginObj.email.toLowerCase(),
             password: loginObj.password
         }
 
