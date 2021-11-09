@@ -11,7 +11,7 @@ import { AuthGuard } from './shared/auth.guard';
 import { SingInComponent } from './sing-in/sing-in.component';
 
 const routes: Routes = [
-  { path: 'sign-in', component: SingInComponent },
+  { path: '', redirectTo: 'sign-in', pathMatch: 'full'},
   { path: 'sign-in', component: SingInComponent },
   { path: 'controle-de-medicamentos', component: PainelComponent, canActivate: [AuthGuard] },
   { path: 'controle-de-pacientes', component: PacientComponent, canActivate: [AuthGuard] },
