@@ -56,8 +56,8 @@ export class SingInComponent implements OnInit {
           this.router.navigateByUrl('controle-de-medicamentos');
         }
       ),
-      ()=>{
-        
+      (e) => {
+        this.authenticate();
       }
 
       this.authentication = new Authentication();

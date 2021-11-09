@@ -17,6 +17,15 @@ export class AuthService extends BaseService {
         super(h);
     }
 
+    // showMessage(msg: string, isError: boolean = false): void {
+    //     this.snackBar.open(msg, 'X', {
+    //       duration: 3000,
+    //       horizontalPosition: 'right',
+    //       verticalPosition: 'top',
+    //       panelClass: isError ? ['msg-error'] : ['msg-success'],
+    //     });
+    // }
+
     login(loginObj: any) {
         //let password = Md5.hashStr(loginObj.password);
         //loginObj.password = password;
