@@ -104,6 +104,9 @@ export class RetiradaComponent implements OnInit {
     if (this.verifyInputs()) {
       this.pacientSvc.registerPacient(this.pacient).subscribe(()=>{
         this.ngOnInit(); 
+      },
+      (error) => {
+        alert(error.message);
       });
       this.pacient = new Pacient();
     }

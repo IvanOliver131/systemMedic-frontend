@@ -48,15 +48,13 @@ export class UserService {
     }
 
     updateUser(alterObj: any): Observable<User[]>{
+        let passworHash =  Md5.hashStr(alterObj.password);
         const obj = {
             username: alterObj.username.toLowerCase(),
             type: alterObj.type,
             email: alterObj.email.toLowerCase(),
-            password: Md5.hashStr(alterObj.password) ,
+            password: passworHash,
         }
-
-        // let password = Md5.hashStr(cadastroObj.password); alterObj.password
-        // cadastroObj.password = password;
 
         return this.http.put<User[]>(`${this.usersURL}/${alterObj.id}`, obj);
     }

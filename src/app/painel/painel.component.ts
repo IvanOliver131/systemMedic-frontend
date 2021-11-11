@@ -76,6 +76,9 @@ export class PainelComponent implements OnInit {
     if (this.verifyInputs()) {
       this.medicineSvc.registerMedicine(this.medicine).subscribe(()=>{
         this.ngOnInit(); 
+      },
+      (error) => {
+        alert(error.message);
       });
       this.medicine = new Medicine();
     }    
