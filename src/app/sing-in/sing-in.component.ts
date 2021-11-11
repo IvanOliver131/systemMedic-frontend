@@ -33,16 +33,19 @@ export class SingInComponent implements OnInit {
     if (!this.authentication.email) {
       msg += `O campo E-mail é requerido.\n\n`;
       success = false;
+      this.showSpinner = false;
     }
     if (!this.authentication.password) {
       msg += `O campo Senha é requerido.\n\n`;
       success = false;
+      this.showSpinner = false;
     }
     if (!success) {
       console.log(msg, `Ok`, {
         duration: 3000,
       });
       alert(msg);
+      this.showSpinner = false;
     }
     return success;
   }

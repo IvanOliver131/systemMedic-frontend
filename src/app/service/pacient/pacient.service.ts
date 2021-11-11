@@ -24,10 +24,10 @@ export class PacientService {
         cartaoSUS_RG: cadastroObj.cartaoSUS_RG.toLowerCase(),
       }
 
-        let headers = new HttpHeaders();
-        headers = headers.append('Content-Type', 'application/json');
-        
-        return this.http.post(`${this.pacientURL}`, obj);
+      let headers = new HttpHeaders();
+      headers = headers.append('Content-Type', 'application/json');
+      
+      return this.http.post(`${this.pacientURL}`, obj);
     }
 
     getSpecificPacients(searchObj: any): Observable<Pacient[]>{

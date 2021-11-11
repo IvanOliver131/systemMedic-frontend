@@ -52,8 +52,11 @@ export class UserService {
             username: alterObj.username.toLowerCase(),
             type: alterObj.type,
             email: alterObj.email.toLowerCase(),
-            password: alterObj.password,
+            password: Md5.hashStr(alterObj.password) ,
         }
+
+        // let password = Md5.hashStr(cadastroObj.password); alterObj.password
+        // cadastroObj.password = password;
 
         return this.http.put<User[]>(`${this.usersURL}/${alterObj.id}`, obj);
     }

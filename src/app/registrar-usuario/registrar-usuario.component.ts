@@ -40,6 +40,7 @@ export class RegistrarUsuarioComponent implements OnInit {
       console.log(msg, `Ok`, {
         duration: 3000,
       });
+      alert(msg);
     }
     return success;
   }
@@ -47,9 +48,12 @@ export class RegistrarUsuarioComponent implements OnInit {
   addUser() {
     if (this.verifyInputs()) {
       this.userSvc.register(this.user).subscribe(
-        () => {
+        (result) => {
           this.getUsers();
           console.log('Usuario cadastrado com sucesso!');
+        },
+        (error) =>{
+          alert(error.message);
         }
       );
       this.user = new User();
