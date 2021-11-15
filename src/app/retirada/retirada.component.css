@@ -41,7 +41,7 @@
 
 .scroll{ 
   display: block;
-  height: 40vh;
+  height: 30vh;
   overflow-y: scroll;
   scroll-behavior: smooth; 
 }
