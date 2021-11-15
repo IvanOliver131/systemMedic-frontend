@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import * as FileSaver from 'file-saver';
 import * as XLSX from 'xlsx';
 
-const Excel_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+const Excel_TYPE = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet; charset=UTF-8';
 const Excel_EXTENSION = '.xlsx';
 
 
@@ -51,7 +51,7 @@ export class RetiradaService {
     downloadExcel(lstMedicineRep: any[], excelFileName: string): void {
       const worksheet: XLSX.WorkSheet = XLSX.utils.json_to_sheet(lstMedicineRep);
       const workbook: XLSX.WorkBook = { Sheets: { 'data': worksheet }, SheetNames: ['data'] };
-      const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'buffer' });
+      const excelBuffer: any = XLSX.write(workbook, { bookType: 'xlsx', type: 'array' });
       this.saveAsExcelFile(excelBuffer, excelFileName);
     }
   
