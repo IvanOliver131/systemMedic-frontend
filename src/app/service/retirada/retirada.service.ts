@@ -45,7 +45,7 @@ export class RetiradaService {
     }
 
     getAllRetiradaDate(dateIni, dateFim){
-      return this.http.get(`${this.pacientMedicineURL}/${dateIni}/${dateFim}`);
+      return this.http.get(`${this.pacientMedicineURL}/${dateFim}/${dateIni}`);
     }
 
     downloadExcel(lstMedicineRep: any[], excelFileName: string): void {

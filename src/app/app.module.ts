@@ -18,6 +18,7 @@ import { RelatorioMedicamentoComponent } from './relatorio-medicamento/relatorio
 import { RelatorioReposicaoComponent } from './relatorio-reposicao/relatorio-reposicao.component';
 import { RegistrarUsuarioComponent } from './registrar-usuario/registrar-usuario.component';
 import { RelatorioRetiradaComponent } from './relatorio-retirada/relatorio-retirada.component';
+import { MedicineService } from './service/medicine/medicine.service';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { RelatorioRetiradaComponent } from './relatorio-retirada/relatorio-retir
   providers: [
     UserService,
     AuthGuard,
+    MedicineService
   ],
   bootstrap: [
     AppComponent,
