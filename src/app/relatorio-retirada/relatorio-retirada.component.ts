@@ -83,7 +83,7 @@ export class RelatorioRetiradaComponent implements OnInit {
       let ano = dateFim.getFullYear();
       this.dateFinal = ano + '-' + mes + '-' + dia;
 
-      this.retiradaSvc.getAllRetiradaDate(this.dataAtual, this.dataAtual).subscribe((result) =>{
+      this.retiradaSvc.getAllRetiradaDate(this.dataAtual, this.dateFinal).subscribe((result) =>{
         this.allRetiradaLst = result; 
         this.allRetiradaLst.forEach((retirada) => {
           this.allPacientLst.forEach((paciente) => {
@@ -101,7 +101,7 @@ export class RelatorioRetiradaComponent implements OnInit {
       let ano = dateFim.getFullYear();
       this.dateFinal = ano + '-' + mes + '-' + dia;
 
-      this.retiradaSvc.getAllRetiradaDate(this.dataAtual, this.dataAtual).subscribe((result) =>{
+      this.retiradaSvc.getAllRetiradaDate(this.dataAtual, this.dateFinal).subscribe((result) =>{
         this.allRetiradaLst = result; 
         this.allRetiradaLst.forEach((retirada) => {
           this.allPacientLst.forEach((paciente) => {
@@ -119,7 +119,7 @@ export class RelatorioRetiradaComponent implements OnInit {
       let ano = dateFim.getFullYear();
       this.dateFinal = ano + '-' + mes + '-' + dia;
 
-      this.retiradaSvc.getAllRetiradaDate(this.dataAtual, this.dataAtual).subscribe((result) =>{
+      this.retiradaSvc.getAllRetiradaDate(this.dataAtual, this.dateFinal).subscribe((result) =>{
         this.allRetiradaLst = result; 
         this.allRetiradaLst.forEach((retirada) => {
           this.allPacientLst.forEach((paciente) => {
