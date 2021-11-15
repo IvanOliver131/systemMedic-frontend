@@ -21,13 +21,10 @@ export class RetiradaService {
     constructor(private http: HttpClient) { }
 
     registerPacientMedicine(cadastroPacient: any, cadastroMedicine: any) {
-      console.log('aki')
       const obj = {
         id_pacient: String(cadastroPacient.id),
         lstMedicine: cadastroMedicine,
-      };
-
-      console.log(obj)
+      };    
       
       return this.http.post(`${this.pacientMedicineURL}`, obj);
     }
@@ -45,7 +42,6 @@ export class RetiradaService {
     }
 
     getAllRetiradaDate(dateIni, dateFim){
-      console.log(dateIni, dateFim)
       return this.http.get(`${this.pacientMedicineURL}/${dateIni}/${dateFim}`);
     }
 

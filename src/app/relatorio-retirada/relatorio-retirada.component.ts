@@ -60,7 +60,7 @@ export class RelatorioRetiradaComponent implements OnInit {
   }
 
   async downloadCsv(allRetiradaLst, nameString){
-    this.retiradaSvc.downloadExcel(allRetiradaLst.data, nameString);
+    this.retiradaSvc.downloadExcel(allRetiradaLst, nameString);
   }
 
   async filterDate(filter){
