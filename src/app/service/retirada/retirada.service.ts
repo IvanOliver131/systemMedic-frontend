@@ -42,6 +42,7 @@ export class RetiradaService {
     }
 
     getAllRetiradaDate(dateIni, dateFim){
+      console.log(dateIni, dateFim);
       return this.http.get(`${this.pacientMedicineURL}/${dateIni}/${dateFim}`);
     }
 
