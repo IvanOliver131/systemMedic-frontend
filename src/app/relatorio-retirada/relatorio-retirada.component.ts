@@ -140,7 +140,7 @@ export class RelatorioRetiradaComponent implements OnInit {
     });
   }
   
-  async getAllRetirada(){
+  getAllRetirada(){
     this.retiradaSvc.getAllPacientMedicine().subscribe((result)=>{
       this.allRetiradaLst = result;
       this.allRetiradaLst.forEach((retirada) => {
