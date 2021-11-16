@@ -61,7 +61,7 @@ export class RelatorioRetiradaComponent implements OnInit {
 
   async downloadCsv(allRetiradaLst, nameString){
     let allRetiradaLstExport;
-    this.allRetiradaLst.forEach((retirada) => {
+    allRetiradaLst.forEach((retirada) => {
       allRetiradaLstExport.id_paciente = retirada.id_pacient;
       allRetiradaLstExport.nome_paciente = retirada.name;
       allRetiradaLstExport.id_medicamento = retirada.id_medicine;
