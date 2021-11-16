@@ -19,6 +19,7 @@ export class RelatorioRetiradaComponent implements OnInit {
   public typeControl = 1;
 
   public allRetiradaLst: any = [];
+  public allRetiradaLstExport: any = [];
 
   public allPacientLst: Array<Pacient> = new Array<Pacient>();
 
@@ -60,16 +61,18 @@ export class RelatorioRetiradaComponent implements OnInit {
   }
 
   async downloadCsv(allRetiradaLst, nameString){
-    let allRetiradaLstExport;
+   
     allRetiradaLst.forEach((retirada) => {
-      allRetiradaLstExport.id_paciente = retirada.id_pacient;
-      allRetiradaLstExport.nome_paciente = retirada.name;
-      allRetiradaLstExport.id_medicamento = retirada.id_medicine;
-      allRetiradaLstExport.nome_medicamento = retirada.medicines.name;
-      allRetiradaLstExport.qtd_retirada = retirada.qtd_medicine;
-      allRetiradaLstExport.data_retirada = retirada.created_at;
-    })
-    this.retiradaSvc.downloadExcel(allRetiradaLstExport, nameString);
+      this.allRetiradaLstExport.id_paciente = retirada.id_pacient;
+      this.allRetiradaLstExport.nome_paciente = retirada.name;
+      this.allRetiradaLstExport.id_medicamento = retirada.id_medicine;
+      this.allRetiradaLstExport.nome_medicamento = retirada.medicines.name;
+      this.allRetiradaLstExport.qtd_retirada = retirada.qtd_medicine;
+      this.allRetiradaLstExport.data_retirada = retirada.created_at;
+    });
+
+    console.log(this.allRetiradaLstExport)
+    this.retiradaSvc.downloadExcel(this.allRetiradaLstExport, nameString);
   }
 
   async filterDate(filter){
