@@ -20,7 +20,7 @@ export class RelatorioRetiradaComponent implements OnInit {
 
   public allRetiradaLst: any = [];
   public allRetiradaLstExportFinal: any = [];
-  public allRetiradaLstExport: any = {
+  public allRetiradaLstExport: {
     id_paciente: "",
     nome_paciente: "",
     id_medicamento: "", 
@@ -78,6 +78,8 @@ export class RelatorioRetiradaComponent implements OnInit {
       this.allRetiradaLstExport.nome_medicamento = retirada.medicines.name;
       this.allRetiradaLstExport.qtd_retirada = retirada.qtd_medicine;
       this.allRetiradaLstExport.data_retirada = retirada.created_at;
+
+      console.log(this.allRetiradaLstExport)
 
       this.allRetiradaLstExportFinal.push(this.allRetiradaLstExport);
     });
