@@ -20,7 +20,14 @@ export class RelatorioRetiradaComponent implements OnInit {
 
   public allRetiradaLst: any = [];
   public allRetiradaLstExportFinal: any = [];
-  public allRetiradaLstExport: any = [];
+  public allRetiradaLstExport: any = [{
+    id_paciente: "",
+    nome_paciente: "",
+    id_medicamento: "", 
+    nome_medicamento: "",
+    qtd_retirada: "",
+    data_retirada: ""
+  }];
 
   public allPacientLst: Array<Pacient> = new Array<Pacient>();
 
@@ -73,7 +80,7 @@ export class RelatorioRetiradaComponent implements OnInit {
       this.allRetiradaLstExport.data_retirada = retirada.created_at;
 
       this.allRetiradaLstExportFinal.push(this.allRetiradaLstExport);
-      console.log(this.allRetiradaLstExportFinal);
+      console.log(retirada);
     });
 
     this.retiradaSvc.downloadExcel(this.allRetiradaLstExportFinal, nameString);
