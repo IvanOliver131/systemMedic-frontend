@@ -73,7 +73,7 @@ export class RelatorioRetiradaComponent implements OnInit {
       this.allRetiradaLstExportFinal.push(this.allRetiradaLstExport);
     });
 
-    this.retiradaSvc.downloadExcel(this.allRetiradaLstExport, nameString);
+    this.retiradaSvc.downloadExcel(this.allRetiradaLstExportFinal, nameString);
   }
 
   async filterDate(filter){
