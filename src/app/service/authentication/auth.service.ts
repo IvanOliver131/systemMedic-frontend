@@ -18,7 +18,7 @@ export class AuthService extends BaseService {
     }
 
     // showMessage(msg: string, isError: boolean = false): void {
-    //     this.snackBar.open(msg, 'X', {
+    //     this.snackBar.open(msg, 'X', {}
     //       duration: 3000,
     //       horizontalPosition: 'right',
     //       verticalPosition: 'top',
