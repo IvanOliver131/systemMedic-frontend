@@ -82,6 +82,15 @@ export class RelatorioRetiradaComponent implements OnInit {
       console.log(this.allRetiradaLstExport)
 
       this.allRetiradaLstExportFinal.push(this.allRetiradaLstExport);
+
+      this.allRetiradaLstExport = { 
+        id_paciente: "",
+        nome_paciente: "",
+        id_medicamento: "", 
+        nome_medicamento: "",
+        qtd_retirada: "",
+        data_retirada: ""
+      };
     });
 
     this.retiradaSvc.downloadExcel(this.allRetiradaLstExportFinal, nameString);
