@@ -20,7 +20,7 @@ export class RelatorioRetiradaComponent implements OnInit {
 
   public allRetiradaLst: any = [];
   public allRetiradaLstExportFinal: any = [];
-  public allRetiradaLstExport: {
+  public allRetiradaLstExport: any = {
     id_paciente: "",
     nome_paciente: "",
     id_medicamento: "", 
