@@ -61,17 +61,18 @@ export class RelatorioRetiradaComponent implements OnInit {
   }
 
   async downloadCsv(allRetiradaLst, nameString){
-   
+    let i = 0;
     allRetiradaLst.forEach((retirada) => {
-      this.allRetiradaLstExport.id_paciente = retirada.id_pacient;
-      this.allRetiradaLstExport.nome_paciente = retirada.name;
-      this.allRetiradaLstExport.id_medicamento = retirada.id_medicine;
-      this.allRetiradaLstExport.nome_medicamento = retirada.medicines.name;
-      this.allRetiradaLstExport.qtd_retirada = retirada.qtd_medicine;
-      this.allRetiradaLstExport.data_retirada = retirada.created_at;
+      this.allRetiradaLstExport[i].id_paciente = retirada.id_pacient;
+      this.allRetiradaLstExport[i].nome_paciente = retirada.name;
+      this.allRetiradaLstExport[i].id_medicamento = retirada.id_medicine;
+      this.allRetiradaLstExport[i].nome_medicamento = retirada.medicines.name;
+      this.allRetiradaLstExport[i].qtd_retirada = retirada.qtd_medicine;
+      this.allRetiradaLstExport[i].data_retirada = retirada.created_at;
+
+      i++;
     });
 
-    console.log(this.allRetiradaLstExport)
     this.retiradaSvc.downloadExcel(this.allRetiradaLstExport, nameString);
   }
 
