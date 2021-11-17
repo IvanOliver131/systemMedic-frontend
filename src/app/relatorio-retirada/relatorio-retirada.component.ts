@@ -62,6 +62,8 @@ export class RelatorioRetiradaComponent implements OnInit {
   }
 
   async downloadCsv(allRetiradaLst, nameString){
+    this.allRetiradaLstExportFinal = [];
+
     allRetiradaLst.forEach((retirada) => {
       this.allRetiradaLstExport.id_paciente = retirada.id_pacient;
       this.allRetiradaLstExport.nome_paciente = retirada.name;
@@ -71,6 +73,7 @@ export class RelatorioRetiradaComponent implements OnInit {
       this.allRetiradaLstExport.data_retirada = retirada.created_at;
 
       this.allRetiradaLstExportFinal.push(this.allRetiradaLstExport);
+      console.log(this.allRetiradaLstExportFinal);
     });
 
     this.retiradaSvc.downloadExcel(this.allRetiradaLstExportFinal, nameString);
